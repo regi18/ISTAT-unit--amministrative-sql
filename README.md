@@ -60,7 +60,7 @@ CREATE TABLE city
 ---
 
 ## Esempio del file generato:
-```
+```sql
 -- province
 INSERT INTO province VALUES(`TO`, `Torino`, 1);
 INSERT INTO province VALUES(`VC`, `Vercelli`, 1);
