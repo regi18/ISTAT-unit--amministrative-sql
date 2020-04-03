@@ -17,8 +17,11 @@ File considerati nello specifico:
 
 ## Utilizzo
 
-L'utilizzo è molto semplice: scaricate i due file presenti nei link in alto (nel caso di provincie/comuni è uno zip, dal quale andrà estratto il file CSV), posizionate i file nella stessa cartella dello script e lanciate quest'ultimo: `python ISTAT_parser.py`.
-Verrà creato un file .sql contenente i dati.
+1. Scaricare i file
+2. Estrarre il file CSV dallo zip
+3. Posizionare lo script python e i CSV nella stessa cartella
+4. Lanciare lo script: `python ISTAT_parser.py`
+5. Finito, troverete un file .sql con i dati
 
 ---
 
