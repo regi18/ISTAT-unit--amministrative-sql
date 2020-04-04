@@ -14,6 +14,7 @@ import codecs
 f = codecs.open(r"..\..\database\x_istat_data.sql","w+", "utf-8")
 
 
+f.write("USE epim;\n\n")
 f.write("-- regions\n")
 
 # regions
@@ -23,7 +24,7 @@ with open('Codici statistici e denominazioni delle ripartizioni sovracomunali .c
     line_count = 0
     for row in csv_reader:
         if line_count > 1:
-            if (row[14] != 'Unità non amministrativa' and row[14] != 'Provincia soppressa'):
+            if (row[14] != 'Provincia soppressa'):
                 # id, name, region (id),
                 regions.append(f'INSERT INTO region VALUES({int(row[5])}, "{row[7]}");\n')
         line_count += 1
@@ -41,7 +42,7 @@ with open('Codici statistici e denominazioni delle ripartizioni sovracomunali .c
     line_count = 0
     for row in csv_reader:
         if line_count > 1:
-            if (row[14] != 'Unità non amministrativa' and row[14] != 'Provincia soppressa'):
+            if (row[14] != 'Provincia soppressa'):
                 # id, name, region (id),
                 f.write(f'INSERT INTO province VALUES("{row[15]}", "{row[12]}", {int(row[5])});\n')
         line_count += 1
@@ -60,4 +61,3 @@ with open('Elenco-comuni-italiani.csv') as csv_file:
             f.write(f'INSERT INTO city VALUES({int(row[14])}, "{row[6]}", "{row[13]}");\n')
         line_count += 1
     print(f'Cities: Processed {line_count} lines.')
-
