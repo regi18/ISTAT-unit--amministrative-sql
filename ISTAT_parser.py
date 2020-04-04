@@ -11,7 +11,7 @@ import sys
 import codecs
 
 
-f = codecs.open("istat_data.sql","w+", "utf-8")
+f = codecs.open(r"istat_data.sql","w+", "utf-8")
 
 
 
